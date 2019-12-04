@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var dogList = arrayListOf<Dog>(
+        var dogList = arrayListOf(
             Dog("Chow Chow", "Male", "4", "dog00"),
             Dog("Breed Pomeranian", "Female", "1", "dog01"),
             Dog("Golden Retriver", "Female", "3", "dog02"),
@@ -21,16 +21,13 @@ class MainActivity : AppCompatActivity() {
             Dog("Shih Tzu", "Female", "5", "dog06")
         )
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
-
             val mAdapter = MainRvAdapter(this, dogList)
             mRecyclerView.adapter = mAdapter
 
             val lm = LinearLayoutManager(this)
             mRecyclerView.layoutManager = lm
             mRecyclerView.setHasFixedSize(true)
-        }
+
+
     }
 }
